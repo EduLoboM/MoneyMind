@@ -1,0 +1,197 @@
+.quiz-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 72px);
+}
+
+.quiz-page .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Progress bar */
+.quiz-progress {
+  margin-bottom: var(--space-8);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.progress-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.progress-percent {
+  font-size: var(--text-sm);
+  color: var(--accent-primary);
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: 0;
+  transition: width 0.4s ease;
+}
+
+/* Question slides */
+.quiz-question-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.35s ease;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.35s ease;
+}
+
+/* Navigation */
+.quiz-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) 0;
+  margin-top: auto;
+}
+
+.quiz-back:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.quiz-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.quiz-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  transition: all var(--transition-fast);
+}
+
+.quiz-dot.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.quiz-dot.answered {
+  background: var(--accent-primary-light);
+  border-color: var(--accent-primary-light);
+}
+
+/* Analyzing screen */
+.analyzing-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 0;
+  animation: fadeIn 0.4s ease;
+}
+
+.analyzing-loader {
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: var(--space-6);
+}
+
+.loader-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  width: 40%;
+  background: var(--accent-primary);
+  border-radius: 0;
+  animation: loadingSlide 1.5s infinite ease-in-out;
+}
+
+@keyframes loadingSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+.analyzing-title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-2);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.analyzing-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 380px;
+  margin-bottom: var(--space-8);
+  line-height: 1.6;
+}
+
+.analyzing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.analyze-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  opacity: 0;
+  animation: fadeInUp 0.35s ease forwards;
+}
+
+.analyze-step.active {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.step-check {
+  color: var(--accent-success);
+  font-weight: 700;
+}
+
+.step-spinner {
+  animation: spin 1s linear infinite;
+  color: var(--accent-primary);
+  font-weight: bold;
+}

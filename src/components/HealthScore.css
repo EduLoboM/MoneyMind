@@ -1,0 +1,152 @@
+.financial-health-card {
+  padding: var(--space-5);
+  background: var(--bg-surface);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.health-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.health-header-icon {
+  color: var(--accent-primary);
+}
+
+.health-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.health-score-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.health-score-digits {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-heading);
+}
+
+.digits-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.digits-total {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.health-score-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.health-score-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.health-trend-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.health-trend-icon {
+  flex-shrink: 0;
+}
+
+.health-meter-track {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.health-meter-fill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.health-factors-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1.5px dashed var(--card-border);
+  padding-top: var(--space-4);
+}
+
+.factors-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.factors-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.factor-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.factor-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.factor-name {
+  color: var(--text-secondary);
+}
+
+.factor-score-val {
+  font-variant-numeric: tabular-nums;
+}
+
+.factor-bar {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.factor-bar-fill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.6s ease;
+}

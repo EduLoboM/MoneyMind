@@ -1,0 +1,214 @@
+/* ========================================================
+   MoneyMind — Navbar Styles
+   Premium glassmorphism, no janky hover transforms
+   ======================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.015);
+  border-radius: 0;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: var(--text-lg);
+  transition: transform var(--transition-fast);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-text {
+  color: var(--accent-primary);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Actions Wrapper */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Gamified User Info (Header) */
+.navbar-gamified-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.navbar-xp-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(15, 23, 42, 0.03);
+  padding: 6px 12px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  font-weight: 600;
+  font-size: var(--text-xs);
+}
+
+.navbar-level-badge {
+  color: var(--text-primary);
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.06);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+.navbar-xp-track {
+  width: 70px;
+  height: 6px;
+  background: rgba(15, 23, 42, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar-xp-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-xp-text {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+/* Profile Pill */
+.navbar-profile-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid;
+  font-weight: 700;
+  font-size: var(--text-xs);
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.navbar-profile-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-profile-name {
+  font-weight: 700;
+}
+
+/* Dashboard Button inside Navbar */
+.btn-dashboard-nav {
+  padding: 8px 16px;
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--accent-primary-dark);
+  box-shadow: 1px 1px 0px var(--accent-primary-dark);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-dashboard-nav:hover {
+  background: var(--accent-primary-light);
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0px var(--accent-primary-dark);
+  color: var(--text-inverse);
+}
+
+.btn-dashboard-nav:active {
+  transform: translate(0px, 0px);
+  box-shadow: 1px 1px 0px var(--accent-primary-dark);
+}
+
+/* Guest Actions */
+.navbar-guest-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.btn-demo-nav {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.btn-demo-nav:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--card-border);
+}
+
+.btn-quiz-nav {
+  padding: 8px 16px;
+  font-size: var(--text-xs);
+  border-width: 1.5px;
+  box-shadow: 1.5px 1.5px 0px var(--accent-primary-dark);
+}
+
+.btn-quiz-nav:hover {
+  box-shadow: 2px 2px 0px var(--accent-primary-dark);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .navbar-xp-container {
+    display: none; /* Hide detailed XP bar on mobile to fit Logo + Pill + Btn */
+  }
+  
+  .navbar-profile-pill {
+    padding: 6px 10px;
+  }
+  
+  .navbar-profile-name {
+    display: none; /* Show icon only on small screens if space is tight */
+  }
+  
+  .navbar-gamified-info {
+    gap: var(--space-2);
+  }
+  
+  .btn-dashboard-nav, .btn-quiz-nav {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  
+  .btn-demo-nav {
+    display: none; /* Hide demo button in guest header on mobile to fit */
+  }
+}
