@@ -62,8 +62,12 @@ export default function Navbar({ profile, level = 2, xp = 350, nextLevelXp = 100
                 <span className="navbar-profile-name">{profile.name}</span>
               </div>
 
-              {/* Botão para ir ao Dashboard */}
-              {location.pathname !== '/dashboard' && (
+              {/* Botão para ir ao Dashboard ou voltar */}
+              {location.pathname === '/dashboard' ? (
+                <Link to="/" className="btn-dashboard-nav" id="nav-landing-btn">
+                  Início
+                </Link>
+              ) : (
                 <Link to="/dashboard" className="btn-dashboard-nav" id="nav-dashboard-btn">
                   Dashboard
                 </Link>
@@ -71,7 +75,11 @@ export default function Navbar({ profile, level = 2, xp = 350, nextLevelXp = 100
             </div>
           ) : (
             <div className="navbar-guest-actions">
-              {location.pathname !== '/dashboard' && (
+              {location.pathname === '/dashboard' ? (
+                <Link to="/" className="btn-demo-nav" id="nav-home-btn">
+                  Início
+                </Link>
+              ) : (
                 <Link to="/dashboard" className="btn-demo-nav" id="nav-demo-btn">
                   Ver Demo
                 </Link>
